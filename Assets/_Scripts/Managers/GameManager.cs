@@ -1,17 +1,21 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
+using TMPro;
 using UnityEditor;
+using UnityEngine;
+using static UnityEditor.Progress;
 
-public class ExampleGameManager : StaticInstance<ExampleGameManager>
+public class GameManager : StaticInstance<GameManager>
 {
     public static event Action<GameState> OnBeforeStateChanged;
     public static event Action<GameState> OnAfterStateChanged;
+    [SerializeField] float TimeForOneRound;
 
     public GameState State { get; private set; }
+    Player player;
+    public Timer timer;
 
-    // Kick the game off with the first state
     void Start() => ChangeState(GameState.Starting);
 
     public void ChangeState(GameState newState)
@@ -46,7 +50,7 @@ public class ExampleGameManager : StaticInstance<ExampleGameManager>
 
         OnAfterStateChanged?.Invoke(newState);
 
-        Debug.Log($"New state: {newState}");
+        //Debug.Log($"New state: {newState}");
     }
 
     private void HandleStarting()
@@ -54,23 +58,22 @@ public class ExampleGameManager : StaticInstance<ExampleGameManager>
         // Do some start setup, could be environment, cinematics etc
 
         // Eventually call ChangeState again with your next state
-
-        ChangeState(GameState.SpawningCases);
+        Debug.Log("Starting game...");
+        ChangeState(GameState.StartRound);
     }
     private void HandleStartRound()
     {
-        // If you're making a turn based game, this could show the turn menu, highlight available units etc
-
-        // Keep track of how many units need to make a move, once they've all finished, change the state. This could
-        // be monitored in the unit manager or the units themselves.
+        if (timer != null)
+        {
+            timer.startTimer(TimeForOneRound);
+        }
+        Debug.Log("Round started");
     }
 
     private void HandleSpawningCases()
     {
 
     }
-
-
 
     private void HandlePlayerTurn()
     {
@@ -79,12 +82,33 @@ public class ExampleGameManager : StaticInstance<ExampleGameManager>
         // Keep track of how many units need to make a move, once they've all finished, change the state. This could
         // be monitored in the unit manager or the units themselves.
     }
+
+    private void HandlePlayerTurnEnd()
+    {
+        // if (bBadLLuggage) Player.ApplyEffect(enum Item, int ItemStat)
+        // Score calculation
+    }
     private void HandleEndRound()
     {
         // If you're making a turn based game, this could show the turn menu, highlight available units etc
 
         // Keep track of how many units need to make a move, once they've all finished, change the state. This could
         // be monitored in the unit manager or the units themselves.
+    }
+
+    public void RegisterPlayer(Player playerRef)
+    {
+        player = playerRef;
+    }
+    public void RegisterTimer(Timer timerRef)
+    {
+        timer = timerRef;
+    }
+    public void ApplyEffect(Item item)
+    {
+        if (player != null){
+            player.ApplyEffect(item);
+        }
     }
 }
 
