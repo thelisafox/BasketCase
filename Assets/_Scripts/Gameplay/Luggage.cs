@@ -38,7 +38,7 @@ public class Luggage : MonoBehaviour
 
     public void setActive(bool active)
     {
-        bool Active = active;
+        Active = active;
     }
 
     public bool isActive()
