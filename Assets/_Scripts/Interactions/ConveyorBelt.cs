@@ -10,7 +10,7 @@ public class ConveyorBelt : MonoBehaviour
     private bool EngineOn;
     public float speed;
     private int topIndex;
-    public List<Transform> spawnLuggageList;
+    public List<GameObject> spawnLuggageList;
 
     private void Start()
     {
@@ -62,8 +62,10 @@ public class ConveyorBelt : MonoBehaviour
         if (topIndex < luggages.Count - 1)
         {
             Top().GetComponent<Rotateable>().enabled = false;
+            Top().GetComponent<Luggage>().setActive(false);
             topIndex++;
             Top().GetComponent<Rotateable>().enabled = true;
+            Top().GetComponent<Luggage>().setActive(true);
             StartEngine();
         }
     }

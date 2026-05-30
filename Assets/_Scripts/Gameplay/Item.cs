@@ -4,21 +4,16 @@ using UnityEngine;
 public class Item : MonoBehaviour
 {
 
-    bool Dangerous;
+    public bool Dangerous;
     public bool Interactable;
     public int EffectNum;
     int ID;
     Luggage luggageParent;
     public ItemsEffect effect;
 
-    private void Initialize(Luggage luggage, int num, bool isBad, int stat, bool interactable, ItemsEffect NewEffect)
+    public void Initialize(Luggage luggage)
     {
-        ID = num;
-        bool Dangerous = isBad;
-        EffectNum = stat;
-        interactable = Interactable;
         luggageParent = luggage;
-        effect = NewEffect;
     }
 
     public bool isItemBad()

@@ -8,6 +8,12 @@ public class Luggage : MonoBehaviour
     public int spawnrate;
 
     public Item[] items;
+
+    private void Start()
+    {
+        Initialize();
+    }
+
     bool IsLuggageBad()
     {
         bool bBad = false;
@@ -24,10 +30,13 @@ public class Luggage : MonoBehaviour
 
     private void Initialize()
     {
-        SpawnItems();
+        foreach (Item item in items)
+        {
+            item.Initialize(this);
+        }
     }
 
-    private void setActive(bool active)
+    public void setActive(bool active)
     {
         bool Active = active;
     }
