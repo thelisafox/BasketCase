@@ -100,6 +100,15 @@ public class GameManager : StaticInstance<GameManager>
     {
         player = playerRef;
     }
+
+    public Player GetPlayer()
+    {
+        if (player != null)
+        {
+            return player;
+        }
+        return null;
+    }
     public void RegisterTimer(Timer timerRef)
     {
         timer = timerRef;
@@ -108,7 +117,7 @@ public class GameManager : StaticInstance<GameManager>
     {
         if (player != null){
             player.ApplyEffect(item);
-        }
+        } else { Debug.Log("No player found"); }
     }
 }
 
