@@ -7,6 +7,6 @@ public class Rotateable : MonoBehaviour
     private void Update()
     {
         transform.RotateAround(transform.position, transform.right, Input.GetAxis("Vertical") * speed);
-        transform.GetChild(0).RotateAround(transform.position, transform.forward, -Input.GetAxis("Horizontal") * speed);
+        if (transform.childCount != 0) transform.GetChild(0).RotateAround(transform.position, transform.forward, -Input.GetAxis("Horizontal") * speed);
     }
 }

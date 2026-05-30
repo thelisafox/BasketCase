@@ -10,6 +10,7 @@ public class ConveyorBelt : MonoBehaviour
     private bool EngineOn;
     public float speed;
     private int topIndex;
+    public List<Transform> spawnLuggageList;
 
     private void Start()
     {

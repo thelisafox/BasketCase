@@ -5,6 +5,7 @@ using static UnityEngine.Rendering.DebugUI;
 public class Luggage : MonoBehaviour
 {
     bool Active = false;
+    public int spawnrate;
 
     public Item[] items;
     bool IsLuggageBad()
