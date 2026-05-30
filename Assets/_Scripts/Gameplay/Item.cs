@@ -5,7 +5,7 @@ public class Item : MonoBehaviour
 {
 
     bool Dangerous;
-    bool Interactable;
+    public bool Interactable;
     public int EffectNum;
     int ID;
     Luggage luggageParent;
@@ -28,21 +28,38 @@ public class Item : MonoBehaviour
 
     private void Interact()
     {
-        if (!luggageParent.isActive())
+        if (luggageParent != null)
         {
-            Debug.Log("Luggage is not active");
-            return;
+            if (!luggageParent.isActive())
+            {
+                Debug.Log("Luggage is not active");
+                return;
+            }
         }
+
         if (!Interactable)
         {
             {
-                Debug.Log("Luggage is not interactable");
+                Debug.Log("Item is not interactable");
                 return;
+            }
+        }
+
+        if (effect == ItemsEffect.ScoreInstant)
+        {
+            Player player = GameManager.Instance.GetPlayer();
+            if (!player.canPlayerCollectMoney())
+            {
+                {
+                    Debug.Log("Player cannot collect moneys :(");
+                    return;
+                }
             }
         }
         GameManager.Instance.ApplyEffect(this);
 
         Debug.Log("Item clicked");
+        Destroy(gameObject);
     }
 
 }
