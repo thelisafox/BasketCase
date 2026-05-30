@@ -1317,6 +1317,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 606035508}
     m_Modifications:
+    - target: {fileID: 1979219891949903750, guid: 46cdf05282138944797bb66893b954fa, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.56
+      objectReference: {fileID: 0}
     - target: {fileID: 7388614169159239176, guid: 46cdf05282138944797bb66893b954fa, type: 3}
       propertyPath: m_Name
       value: ConveyerBelt
@@ -1596,6 +1600,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 994472375}
     m_Modifications:
+    - target: {fileID: 466827127774303858, guid: 246973c5dfbd8ec4ca70f32334ee787b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -52.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2037312107822133115, guid: 246973c5dfbd8ec4ca70f32334ee787b, type: 3}
+      propertyPath: field of view
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 3525473393805132726, guid: 246973c5dfbd8ec4ca70f32334ee787b, type: 3}
       propertyPath: m_Name
       value: XRAYScreen
