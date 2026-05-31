@@ -13,6 +13,12 @@ public class StartGame : MonoBehaviour
   }
   public void MainMenu()
   {
-   SceneManager.LoadSceneAsync("MainMenu");
+    SceneManager.LoadSceneAsync("MainMenu");
   }
+  public void Credits()
+  {
+    SceneManager.LoadSceneAsync("CreditScene");
+  }
+
+
 }
