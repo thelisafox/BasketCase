@@ -38,11 +38,11 @@ public class Item : MonoBehaviour
                 return;
             }
 
-            // change game state if it was bounty
+            /*// change game state if it was bounty
             if (luggageParent.isBounty)
             {
                 GameManager.Instance.ChangeState(GameState.StartRound);
-            }
+            }*/
 
             if (Dangerous)
             {
