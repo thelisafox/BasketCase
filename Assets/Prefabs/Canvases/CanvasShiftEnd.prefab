@@ -423,13 +423,14 @@ GameObject:
   - component: {fileID: 5862283862332347407}
   - component: {fileID: 6722309830005017981}
   - component: {fileID: 496033091320237256}
+  - component: {fileID: 739042163539227255}
   m_Layer: 0
   m_Name: CanvasShiftEnd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &8420444552023152599
 RectTransform:
   m_ObjectHideFlags: 0
@@ -527,6 +528,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &739042163539227255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1726028575064680857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0947dc9259b95d74493af29512e7faa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StartGame
 --- !u!1 &2278168764396791578
 GameObject:
   m_ObjectHideFlags: 0
@@ -2047,7 +2060,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 739042163539227255}
         m_TargetAssemblyTypeName: StartGame, Assembly-CSharp
         m_MethodName: MainMenu
         m_Mode: 1
