@@ -18,14 +18,7 @@ public class Button : MonoBehaviour
     {
         if (GameManager.Instance.State == GameState.EndRound)
         {
-            if (GameManager.Instance.howManyRoundsPassed() < 4) 
-            { 
-                GameManager.Instance.ChangeState(GameState.StartRound); 
-            } else
-            {
-                GameManager.Instance.ChangeState(GameState.EndGame);
-            }
-
+            GameManager.Instance.ChangeState(GameState.StartRound);
         }
         else
         {

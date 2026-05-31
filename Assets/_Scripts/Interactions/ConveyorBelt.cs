@@ -15,6 +15,8 @@ public class ConveyorBelt : MonoBehaviour
     public List<GameObject> spawnLuggageList;
     public List<GameObject> BountyCases;
     [SerializeField] public Animator animator;
+    private int roundspassed = 1;
+
     //private List<Luggage> spawnLuggages;
 
     private void Start()
@@ -81,7 +83,11 @@ public class ConveyorBelt : MonoBehaviour
                 Top().GetComponent<Rotateable>().enabled = true;
                 Top().GetComponent<Luggage>().setActive(true);
                 if (Top().GetComponent<Luggage>().isBounty)
+                {
                     GameManager.Instance.ChangeState(GameState.EndRound);
+                    roundspassed++;
+                    if (roundspassed == 4) GameManager.Instance.ChangeState(GameState.EndGame);
+                }
                 StartEngine();
             }
     }
