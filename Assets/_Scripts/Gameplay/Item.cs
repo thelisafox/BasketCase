@@ -48,6 +48,7 @@ public class Item : MonoBehaviour
             {
                 luggageParent.items.Remove(this);
                 Destroy(gameObject);
+                return;
             }
         }
 
@@ -93,9 +94,6 @@ public class Item : MonoBehaviour
         GameManager.Instance.ApplyEffect(this);
 
         Debug.Log("Item clicked");
-
-
-        
         Destroy(gameObject);
     }
 

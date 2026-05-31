@@ -77,7 +77,7 @@ public class ConveyorBelt : MonoBehaviour
             {
                 Top().GetComponent<Rotateable>().enabled = false;
                 Top().GetComponent<Luggage>().setActive(false);
-                //Top().GetComponent<Luggage>().IsLuggageBad();
+                Top().GetComponent<Luggage>().IsLuggageBad();
                 topIndex++;
                 Top().GetComponent<Rotateable>().enabled = true;
                 Top().GetComponent<Luggage>().setActive(true);
