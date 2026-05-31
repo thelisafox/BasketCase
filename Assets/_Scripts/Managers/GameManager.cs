@@ -6,7 +6,6 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.SocialPlatforms.Impl;
-using static UnityEditor.Progress;
 
 public class GameManager : StaticInstance<GameManager>
 {
