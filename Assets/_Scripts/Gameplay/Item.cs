@@ -78,6 +78,12 @@ public class Item : MonoBehaviour
         GameManager.Instance.ApplyEffect(this);
 
         Debug.Log("Item clicked");
+
+
+        // change game state if it was bounty
+        if (luggageParent.isBounty)
+            GameManager.Instance.ChangeState(GameState.StartRound);
+
         Destroy(gameObject);
     }
 

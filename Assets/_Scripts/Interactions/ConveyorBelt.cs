@@ -72,16 +72,19 @@ public class ConveyorBelt : MonoBehaviour
 
     public void Pop()
     {
-        if (topIndex < luggages.Count - 1)
-        {
-            Top().GetComponent<Rotateable>().enabled = false;
-            Top().GetComponent<Luggage>().setActive(false);
-            //Top().GetComponent<Luggage>().IsLuggageBad();
-            topIndex++;
-            Top().GetComponent<Rotateable>().enabled = true;
-            Top().GetComponent<Luggage>().setActive(true);
-            StartEngine();
-        }
+        if (luggages != null)
+            if (topIndex < luggages.Count - 1)
+            {
+                Top().GetComponent<Rotateable>().enabled = false;
+                Top().GetComponent<Luggage>().setActive(false);
+                //Top().GetComponent<Luggage>().IsLuggageBad();
+                topIndex++;
+                Top().GetComponent<Rotateable>().enabled = true;
+                Top().GetComponent<Luggage>().setActive(true);
+                if (Top().GetComponent<Luggage>().isBounty)
+                    GameManager.Instance.ChangeState(GameState.EndRound);
+                StartEngine();
+            }
     }
 
     private void StartEngine()
@@ -112,18 +115,18 @@ public class ConveyorBelt : MonoBehaviour
         container.position = new Vector3(container.position.x - speed, container.position.y, container.position.z);
         if (Vector3.Distance(Top().position, luggageParking.position) < .01f)
             StopEngine();
-        if (Vector3.Distance(luggages.First().position, luggageRemoval.position) < .01f)
+        /*if (Vector3.Distance(luggages.First().position, luggageRemoval.position) < .01f)
         {
             luggages.Remove(luggages.First());
             Destroy(luggages.First().gameObject);
             SpawnObject();
-        }
+        }*/
     }
 
     public void SpawnObject()
     {
 
-        int i = Random.Range(0, 100);
+        /*int i = Random.Range(0, 100);
         for (int j = 0; j < spawnLuggageList.Count; j++)
         {
             if (i >= spawnLuggageList[j].GetComponent<Luggage>().minProbabilityRange && i <= spawnLuggageList[j].GetComponent<Luggage>().maxProbabilityRange)
@@ -133,7 +136,7 @@ public class ConveyorBelt : MonoBehaviour
                 break;
             }
 
-        }
+        }*/
     }
     public void SpawnBountyCase()
     {

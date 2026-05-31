@@ -7,6 +7,7 @@ public class Luggage : MonoBehaviour
 {
     bool Active = false;
     public int spawnrate;
+    public bool isBounty;
     [SerializeField] public int minProbabilityRange;
     [SerializeField] public int maxProbabilityRange;
 
