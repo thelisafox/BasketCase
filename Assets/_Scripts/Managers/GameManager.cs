@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 using static UnityEditor.Progress;
 
 public class GameManager : StaticInstance<GameManager>
@@ -102,7 +103,46 @@ public class GameManager : StaticInstance<GameManager>
     private void HandleEndRound()
     {
         InGameCanvas.SetActive(false);
+
         ScoreCanvas.SetActive(true);
+        Transform ScoreText = ScoreCanvas.transform.Find("Score Numbers");
+        ScoreText.gameObject.GetComponent<TextMeshProUGUI>().text = player.HowMuchScore().ToString("00000");
+
+        int quota = 1;
+        if (RoundsPassed == 1)
+        {
+            quota = 100;
+        }
+        else if (RoundsPassed == 2)
+        {
+            quota = 200;
+        }
+        else if (RoundsPassed == 3)
+        {
+            quota = 300;
+        }
+        else if (RoundsPassed == 4)
+        {
+            quota = 400;
+        }
+        Transform QuotaText = ScoreCanvas.transform.Find("Quota Numbers");
+        QuotaText.gameObject.GetComponent<TextMeshProUGUI>().text = quota.ToString("00000");
+
+        Transform RespectPText = ScoreCanvas.transform.Find("Respect Points Number");
+        RespectPText.gameObject.GetComponent<TextMeshProUGUI>().text = (player.HowMuchScore() - quota).ToString("00000");
+
+        if (quota > player.HowMuchScore())
+        {
+            Transform LoseUI = ScoreCanvas.transform.Find("WL_Loosing");
+            LoseUI.gameObject.SetActive(true);
+
+            Transform WinUI = ScoreCanvas.transform.Find("WL_Winning");
+            WinUI.gameObject.SetActive(false);
+
+            Transform nextButton = ScoreCanvas.transform.Find("Button (NEXTSHFT)");
+            nextButton.gameObject.SetActive(false);
+
+        }
         if (RoundsPassed == 1 || RoundsPassed == 4 || RoundsPassed == 7)
         {
 

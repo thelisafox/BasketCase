@@ -68,6 +68,10 @@ public class Player : MonoBehaviour
         return Moneys;
     }
 
+    public int HowMuchScore()
+    {
+        return Score;
+    }
 }
 
 [Serializable]

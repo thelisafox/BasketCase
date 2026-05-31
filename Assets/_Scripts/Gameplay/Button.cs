@@ -14,11 +14,11 @@ public class Button : MonoBehaviour
         
     }
 
-    private void Interact()
+    public void Interact()
     {
         if (GameManager.Instance.State == GameState.EndRound)
         {
-
+            GameManager.Instance.ChangeState(GameState.StartRound);
         } else
         {
             GameManager.Instance.conveyerBelt.Pop();
