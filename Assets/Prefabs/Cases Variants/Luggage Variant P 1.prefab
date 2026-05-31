@@ -182,6 +182,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Luggage Variant P 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2269171562957570129, guid: 2ab02f70283849d4297800dd795c9761, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 7567d73bfe7899c4c9fc95ecdba16060, type: 2}
     - target: {fileID: 3340359130484412814, guid: 2ab02f70283849d4297800dd795c9761, type: 3}
       propertyPath: items.Array.size
       value: 3
@@ -200,15 +204,15 @@ PrefabInstance:
       objectReference: {fileID: 4982179332042761720}
     - target: {fileID: 4293897491742487210, guid: 2ab02f70283849d4297800dd795c9761, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.35763004
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4293897491742487210, guid: 2ab02f70283849d4297800dd795c9761, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.29470673
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4293897491742487210, guid: 2ab02f70283849d4297800dd795c9761, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.3418305
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4293897491742487210, guid: 2ab02f70283849d4297800dd795c9761, type: 3}
       propertyPath: m_LocalRotation.w

@@ -105,6 +105,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Luggage Variant Wallet
       objectReference: {fileID: 0}
+    - target: {fileID: 2269171562957570129, guid: 2ab02f70283849d4297800dd795c9761, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: a58f84946d004c943a3e6f1d675c1327, type: 2}
     - target: {fileID: 3340359130484412814, guid: 2ab02f70283849d4297800dd795c9761, type: 3}
       propertyPath: isBounty
       value: 1

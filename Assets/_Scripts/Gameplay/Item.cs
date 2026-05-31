@@ -37,7 +37,20 @@ public class Item : MonoBehaviour
                 Debug.Log("Luggage is not active");
                 return;
             }
+
+            // change game state if it was bounty
+            if (luggageParent.isBounty)
+            {
+                GameManager.Instance.ChangeState(GameState.StartRound);
+            }
+
+            if (Dangerous)
+            {
+                luggageParent.items.Remove(this);
+                Destroy(gameObject);
+            }
         }
+
 
         if (!Interactable)
         {
@@ -75,15 +88,14 @@ public class Item : MonoBehaviour
         }
         */
 
+        
+
         GameManager.Instance.ApplyEffect(this);
 
         Debug.Log("Item clicked");
 
 
-        // change game state if it was bounty
-        if (luggageParent.isBounty)
-            GameManager.Instance.ChangeState(GameState.StartRound);
-
+        
         Destroy(gameObject);
     }
 

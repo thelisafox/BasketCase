@@ -190,6 +190,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Luggage Variant T 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2269171562957570129, guid: 2ab02f70283849d4297800dd795c9761, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: f19bbb63b91d62947a26e778d8ed294c, type: 2}
     - target: {fileID: 3340359130484412814, guid: 2ab02f70283849d4297800dd795c9761, type: 3}
       propertyPath: items.Array.size
       value: 3
@@ -208,15 +212,15 @@ PrefabInstance:
       objectReference: {fileID: 6010218911845328426}
     - target: {fileID: 4293897491742487210, guid: 2ab02f70283849d4297800dd795c9761, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.0353136
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4293897491742487210, guid: 2ab02f70283849d4297800dd795c9761, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.2947068
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4293897491742487210, guid: 2ab02f70283849d4297800dd795c9761, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.38379782
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4293897491742487210, guid: 2ab02f70283849d4297800dd795c9761, type: 3}
       propertyPath: m_LocalRotation.w
@@ -281,6 +285,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Luggage
   spawnrate: 0
+  isBounty: 0
+  minProbabilityRange: 0
+  maxProbabilityRange: 0
   items: []
 --- !u!4 &8839549726316505680 stripped
 Transform:
