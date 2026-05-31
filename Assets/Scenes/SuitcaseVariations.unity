@@ -124,63 +124,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5760369448878768909, guid: 46cdf05282138944797bb66893b954fa, type: 3}
   m_PrefabInstance: {fileID: 1638521835}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &175315812
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 5623876629980881860, guid: a6402d2f81721fc4484fba68afbd8b71, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.15025459
-      objectReference: {fileID: 0}
-    - target: {fileID: 5623876629980881860, guid: a6402d2f81721fc4484fba68afbd8b71, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.29470673
-      objectReference: {fileID: 0}
-    - target: {fileID: 5623876629980881860, guid: a6402d2f81721fc4484fba68afbd8b71, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -1.1857872
-      objectReference: {fileID: 0}
-    - target: {fileID: 5623876629980881860, guid: a6402d2f81721fc4484fba68afbd8b71, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5623876629980881860, guid: a6402d2f81721fc4484fba68afbd8b71, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5623876629980881860, guid: a6402d2f81721fc4484fba68afbd8b71, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5623876629980881860, guid: a6402d2f81721fc4484fba68afbd8b71, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5623876629980881860, guid: a6402d2f81721fc4484fba68afbd8b71, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5623876629980881860, guid: a6402d2f81721fc4484fba68afbd8b71, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
-      objectReference: {fileID: 0}
-    - target: {fileID: 5623876629980881860, guid: a6402d2f81721fc4484fba68afbd8b71, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7712330374617753550, guid: a6402d2f81721fc4484fba68afbd8b71, type: 3}
-      propertyPath: m_Name
-      value: Luggage Variant
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: a6402d2f81721fc4484fba68afbd8b71, type: 3}
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -1795,4 +1738,3 @@ SceneRoots:
   - {fileID: 1695116763}
   - {fileID: 8301657080449212950}
   - {fileID: 1329708611}
-  - {fileID: 175315812}
