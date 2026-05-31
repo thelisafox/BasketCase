@@ -69,7 +69,6 @@ public class GameManager : StaticInstance<GameManager>
     private void HandleStartRound()
     {
         RoundsPassed++;
-        // if (RoundsPassed == 4) { GameManager.Instance.ChangeState(GameState.EndGame); }
         if (timer != null)
         {
             timer.startTimer(TimeForOneRound);

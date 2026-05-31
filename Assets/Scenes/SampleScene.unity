@@ -1580,7 +1580,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a13204a545aef0e4e916744f7de136cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  TimeForOneRound: 30
+  TimeForOneRound: 90
   conveyerBelt: {fileID: 1638521837}
   player: {fileID: 308366365}
   ScoreCanvas: {fileID: 239395718}
