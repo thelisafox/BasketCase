@@ -58,7 +58,7 @@ public class Item : MonoBehaviour
                 }
             }
         }
-
+        /*
         if (Purchasable)
         {
             if (GameManager.Instance.GetPlayer().HowMuchMoneys() < Price)
@@ -73,6 +73,7 @@ public class Item : MonoBehaviour
             }
 
         }
+        */
 
         GameManager.Instance.ApplyEffect(this);
 

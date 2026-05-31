@@ -13,9 +13,12 @@ public class GameManager : StaticInstance<GameManager>
     [SerializeField] float TimeForOneRound;
     [SerializeField] public ConveyorBelt conveyerBelt;
     [SerializeField] public Player player;
+    [SerializeField] public GameObject ScoreCanvas;
+    [SerializeField] public GameObject InGameCanvas;
+    [SerializeField] public Timer timer;
 
     public GameState State { get; private set; }
-    public Timer timer;
+    
     private int RoundsPassed = 0;
 
     void Start() => ChangeState(GameState.Starting);
@@ -65,12 +68,17 @@ public class GameManager : StaticInstance<GameManager>
     }
     private void HandleStartRound()
     {
+        RoundsPassed++;
         if (timer != null)
         {
             timer.startTimer(TimeForOneRound);
         }
-        conveyerBelt.Pop();
+        //conveyerBelt.Pop();
         Debug.Log("Round started");
+        InGameCanvas.SetActive(true);
+        Transform DayText = InGameCanvas.transform.Find("DayText");
+        DayText.gameObject.GetComponent<TextMeshProUGUI>().text = string.Format("Day {0}", RoundsPassed);
+        ScoreCanvas.SetActive(false);
     }
 
     private void HandleSpawningCases()
@@ -93,7 +101,8 @@ public class GameManager : StaticInstance<GameManager>
     }
     private void HandleEndRound()
     {
-        RoundsPassed++;
+        InGameCanvas.SetActive(false);
+        ScoreCanvas.SetActive(true);
         if (RoundsPassed == 1 || RoundsPassed == 4 || RoundsPassed == 7)
         {
 

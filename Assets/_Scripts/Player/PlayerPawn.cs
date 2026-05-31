@@ -1,4 +1,6 @@
 using System;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem.LowLevel;
 using static UnityEngine.Rendering.DebugUI;
@@ -6,7 +8,7 @@ using static UnityEngine.Rendering.DebugUI;
 public class Player : MonoBehaviour
 {
     private int Score = 0;
-    private bool canCollectMoney = false;
+    private bool canCollectMoney = true;
     private int Moneys = 0;
     public void Start()
     {
@@ -44,6 +46,8 @@ public class Player : MonoBehaviour
         {
             GameManager.Instance.ChangeState(GameState.EndRound);
         }
+        Transform ScoreText = GameManager.Instance.InGameCanvas.transform.Find("ScoreText");
+        ScoreText.gameObject.GetComponent<TextMeshProUGUI>().text = Score.ToString("00000");
 
         Debug.Log($"CurrentScore: {Score}");
     }

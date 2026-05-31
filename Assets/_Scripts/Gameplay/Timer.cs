@@ -14,7 +14,7 @@ public class Timer : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
      {
-         GameManager.Instance.RegisterTimer(this);
+         //GameManager.Instance.RegisterTimer(this);
      }
     
     public void startTimer(float TimeInRound)
@@ -25,6 +25,7 @@ public class Timer : MonoBehaviour
 
     public void addTime(float addedTime)
     {
+        Debug.Log("TimeAdded");
         remainingTime += addedTime;
     }
 
