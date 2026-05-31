@@ -188,7 +188,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2206002295792613024, guid: 2ab02f70283849d4297800dd795c9761, type: 3}
       propertyPath: m_Name
-      value: Luggage Variant Watch Variant
+      value: Luggage Variant Watch
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340359130484412814, guid: 2ab02f70283849d4297800dd795c9761, type: 3}
+      propertyPath: isBounty
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3340359130484412814, guid: 2ab02f70283849d4297800dd795c9761, type: 3}
       propertyPath: items.Array.size

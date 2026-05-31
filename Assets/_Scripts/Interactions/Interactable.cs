@@ -5,11 +5,11 @@ public class Interactable : MonoBehaviour
 {
     private int kaka = 0;
 
-    /*private void OnMouseUpAsButton()
+    private void OnMouseUpAsButton()
     {
         // call function needed according to object pressed
         gameObject.SendMessage("Interact");
-    }*/
+    }
 
     private void Update()
     {
@@ -20,12 +20,11 @@ public class Interactable : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit))
             {
-                if (hit.transform.name != "Button" && hit.transform.parent.GetComponent<Item>() != null)
+                if (hit.transform.name != "Button" && hit.transform.parent.GetComponent<Item>() != null && hit.transform.parent.name == name)
                 {
                     kaka = 1;
                     hit.transform.parent.SendMessage("Interact");
                     print(hit.transform.parent.name);
-                    print(hit.transform.name);
                 }
             }
         }
