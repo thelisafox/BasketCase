@@ -122,7 +122,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1011786244802077100, guid: 212e0d3ddcc4d6b44908035700ee2f25, type: 3}
       propertyPath: m_Name
-      value: Bomb Variant
+      value: Bomb
+      objectReference: {fileID: 0}
+    - target: {fileID: 4887480766121488060, guid: 212e0d3ddcc4d6b44908035700ee2f25, type: 3}
+      propertyPath: Dangerous
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4887480766121488060, guid: 212e0d3ddcc4d6b44908035700ee2f25, type: 3}
+      propertyPath: EffectNum
+      value: -15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4887480766121488060, guid: 212e0d3ddcc4d6b44908035700ee2f25, type: 3}
+      propertyPath: Interactable
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5091863832031079804, guid: 212e0d3ddcc4d6b44908035700ee2f25, type: 3}
       propertyPath: m_LocalPosition.x

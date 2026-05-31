@@ -73,7 +73,7 @@ public class GameManager : StaticInstance<GameManager>
         {
             timer.startTimer(TimeForOneRound);
         }
-        //conveyerBelt.Pop();
+        conveyerBelt.Pop();
         Debug.Log("Round started");
         InGameCanvas.SetActive(true);
         Transform DayText = InGameCanvas.transform.Find("DayText");

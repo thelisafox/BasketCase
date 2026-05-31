@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using static UnityEngine.Rendering.DebugUI;
@@ -11,7 +12,7 @@ public class Luggage : MonoBehaviour
     [SerializeField] public int minProbabilityRange;
     [SerializeField] public int maxProbabilityRange;
 
-    public Item[] items;
+    public List<Item> items;
 
     private void Start()
     {
