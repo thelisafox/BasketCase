@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.SocialPlatforms.Impl;
 using static UnityEditor.Progress;
 
@@ -19,7 +20,7 @@ public class GameManager : StaticInstance<GameManager>
     [SerializeField] public Timer timer;
 
     public GameState State { get; private set; }
-    
+
     private int RoundsPassed = 0;
 
     void Start() => ChangeState(GameState.Starting);
@@ -46,9 +47,8 @@ public class GameManager : StaticInstance<GameManager>
             case GameState.EndRound:
                 HandleEndRound();
                 break;
-            case GameState.Win:
-                break;
-            case GameState.Lose:
+            case GameState.EndGame:
+                HandleEnding();
                 break;
             default:
                 throw new ArgumentOutOfRangeException(nameof(newState), newState, null);
@@ -163,10 +163,22 @@ public class GameManager : StaticInstance<GameManager>
     }
     public void ApplyEffect(Item item)
     {
-        if (player != null){
+        if (player != null)
+        {
             player.ApplyEffect(item);
-        } else { Debug.Log("No player found"); }
+        }
+        else { Debug.Log("No player found"); }
     }
+
+    public int howManyRoundsPassed()
+    {
+        return RoundsPassed;
+    } 
+
+    private void HandleEnding() {
+        SceneManager.LoadSceneAsync("MainMenu");
+    }
+
 }
 
 /// <summary>
@@ -181,6 +193,5 @@ public enum GameState
     SpawningCases = 2,
     PlayerTurn = 3,
     EndRound = 4,
-    Win = 5,
-    Lose = 6,
+    EndGame = 5,
 }
