@@ -729,7 +729,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: GAMENAME
+  m_text: " NOTHING \nTO DECLARE\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4e15032e0c593e24e89316c6fb3f9a3c, type: 2}
   m_sharedMaterial: {fileID: -2683691669365114580, guid: 4e15032e0c593e24e89316c6fb3f9a3c, type: 2}
@@ -756,8 +756,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 100
-  m_fontSizeBase: 100
+  m_fontSize: 80
+  m_fontSizeBase: 80
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
