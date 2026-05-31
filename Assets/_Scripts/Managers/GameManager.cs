@@ -11,10 +11,12 @@ public class GameManager : StaticInstance<GameManager>
     public static event Action<GameState> OnBeforeStateChanged;
     public static event Action<GameState> OnAfterStateChanged;
     [SerializeField] float TimeForOneRound;
+    [SerializeField] public ConveyorBelt conveyerBelt;
+    [SerializeField] public Player player;
 
     public GameState State { get; private set; }
-    Player player;
     public Timer timer;
+    private int RoundsPassed = 0;
 
     void Start() => ChangeState(GameState.Starting);
 
@@ -67,6 +69,7 @@ public class GameManager : StaticInstance<GameManager>
         {
             timer.startTimer(TimeForOneRound);
         }
+        conveyerBelt.Pop();
         Debug.Log("Round started");
     }
 
@@ -90,15 +93,11 @@ public class GameManager : StaticInstance<GameManager>
     }
     private void HandleEndRound()
     {
-        // If you're making a turn based game, this could show the turn menu, highlight available units etc
+        RoundsPassed++;
+        if (RoundsPassed == 1 || RoundsPassed == 4 || RoundsPassed == 7)
+        {
 
-        // Keep track of how many units need to make a move, once they've all finished, change the state. This could
-        // be monitored in the unit manager or the units themselves.
-    }
-
-    public void RegisterPlayer(Player playerRef)
-    {
-        player = playerRef;
+        }
     }
 
     public Player GetPlayer()

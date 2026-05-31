@@ -7,9 +7,9 @@ public class Player : MonoBehaviour
 {
     private int Score = 0;
     private bool canCollectMoney = false;
+    private int Moneys = 0;
     public void Start()
     {
-        GameManager.Instance.RegisterPlayer(this);
     }
 
     public void Update()
@@ -51,6 +51,17 @@ public class Player : MonoBehaviour
     public bool canPlayerCollectMoney()
     {
         return canCollectMoney;
+    }
+
+    public void PurchaseItem(Item item)
+    {
+        Moneys = Moneys - item.Price;
+        ApplyEffect(item);
+    }
+
+    public int HowMuchMoneys()
+    {
+        return Moneys;
     }
 
 }

@@ -1,4 +1,5 @@
 using System;
+using TMPro;
 using UnityEngine;
 using static UnityEngine.Rendering.DebugUI;
 
@@ -6,6 +7,8 @@ public class Luggage : MonoBehaviour
 {
     bool Active = false;
     public int spawnrate;
+    [SerializeField] public int minProbabilityRange;
+    [SerializeField] public int maxProbabilityRange;
 
     public Item[] items;
 
@@ -14,18 +17,17 @@ public class Luggage : MonoBehaviour
         Initialize();
     }
 
-    bool IsLuggageBad()
+    public void IsLuggageBad()
     {
-        bool bBad = false;
         foreach (Item item in items)
         {
             if (item.isItemBad())
             {
-                bBad = true;
+                item.ApplyEffect();
 
             }
         }
-        return bBad;
+
     }
 
     private void Initialize()

@@ -7,6 +7,8 @@ public class Item : MonoBehaviour
     public bool Dangerous;
     public bool Interactable;
     public int EffectNum;
+    public bool Purchasable;
+    public int Price;
     int ID;
     Luggage luggageParent;
     public ItemsEffect effect;
@@ -19,6 +21,11 @@ public class Item : MonoBehaviour
     public bool isItemBad()
     {
         return Dangerous;
+    }
+
+    public void ApplyEffect()
+    {
+        GameManager.Instance.ApplyEffect(this);
     }
 
     private void Interact()
@@ -51,6 +58,22 @@ public class Item : MonoBehaviour
                 }
             }
         }
+
+        if (Purchasable)
+        {
+            if (GameManager.Instance.GetPlayer().HowMuchMoneys() < Price)
+            {
+                Debug.Log("Player doesnt have enough moneys :(");
+                return;
+            }
+            else
+            {
+                GameManager.Instance.GetPlayer().PurchaseItem(this);
+                Destroy(gameObject);
+            }
+
+        }
+
         GameManager.Instance.ApplyEffect(this);
 
         Debug.Log("Item clicked");
